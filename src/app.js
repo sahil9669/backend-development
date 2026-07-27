@@ -24,21 +24,60 @@ app.post("/notes",async (req,res)=>{
     })
 })
 
-app.get("/", (req, res) => {
-    res.send("Server is working");
-});
-
 app.get("/notes", async (req, res) => {
-    console.log("GET /notes was called");
 
-    const notes = await noteModel.findOne({
-        title:"new_title"
-    });
+    /* to find note with similar title */
+    // const notes = await noteModel.find({
+    //     title:"new_title"
+    // });
+
+    const notes = await noteModel.find();
+
+    /*
+
+    find => [{},{}] or []
+    findOne => {} or null
+    */
 
     res.status(200).json({
         message: "Notes fetched successfully",
         notes
     });
 });
+
+/* to delete the first note matching the filter */
+app.delete("/notes/:id",async (req,res)=>{
+
+    const id = req.params.id
+
+    await noteModel.findOneAndDelete({
+        _id:id
+    })
+
+    res.status(200).json({
+        message: "Note deleted successfully"
+    })
+})
+
+/* to delete all documents in collection */
+app.delete("/notes", async (req, res) => {
+    await noteModel.deleteMany({});
+
+    res.send({
+        message: "All notes deleted successfully"
+    });
+});
+
+app.patch("/notes/:id",async (req,res)=>{
+    const id = req.params.id
+
+    const description = req.body.description
+
+    await noteModel.findOneAndUpdate({_id:id},{description:description})
+
+    res.status(200).json({
+        message: "Note updated successfully"
+    })
+})
 
 module.exports=app
