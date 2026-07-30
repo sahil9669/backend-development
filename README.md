@@ -5,7 +5,7 @@ This repository documents my backend development journey using **Node.js**, **Ex
 ## 📂 Projects
 
 - ✅ 01 - Notes API
-- ⏳ 02 - Cloud Storage API
+- ✅ 02 - Cloud Storage API (React + Node.js Image Upload)
 - ⏳ 03 - Authentication
 - ⏳ 04 - Spotify Backend
 - ⏳ 05 - Testing with Jest & Supertest
