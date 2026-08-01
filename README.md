@@ -6,7 +6,7 @@ This repository documents my backend development journey using **Node.js**, **Ex
 
 - ✅ 01 - Notes API
 - ✅ 02 - Cloud Storage API (React + Node.js Image Upload)
-- ⏳ 03 - Authentication
+- ✅ 03 - Authentication
 - ⏳ 04 - Spotify Backend
 - ⏳ 05 - Testing with Jest & Supertest
 - ⏳ 06 - API Validation
@@ -33,7 +33,7 @@ Each project focuses on a different concept and follows good coding practices, c
 - ✅ Express.js Fundamentals
 - ✅ REST APIs
 - ✅ MongoDB & Mongoose
-- ⏳ Authentication
+- ✅ Authentication
 - ⏳ Middleware
 - ⏳ Testing
 - ⏳ Validation
